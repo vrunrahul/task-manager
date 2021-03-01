@@ -1,0 +1,23 @@
+
+<h4> Hello </h4>
+<p> Below tasks migtht get over the deadline. Please take action before that<p>
+
+<table>
+  <thead>
+    <tr>
+      <th >id</th>
+      <th >name</th>
+      <th >status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.name %></td>
+        <td><%= task.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
