@@ -12,12 +12,9 @@
     <%= f.select :status,
                     (f.object.persisted? ? ([f.object.status] + f.object.aasm(:status).permitted_transitions.map { |a| a[:state].to_s }) : [Task.aasm(:status).initial_state.to_s]),
                     {prompt:'select'},{class: "form-control", required: true} %>
-
-    <%= f.input :start_date, 'data-provide' => 'datepicker' %>
+    <%= f.input :start_date %>
     <%= f.input :end_date %>
-  </div>
-
   <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="col-md-6"><%= f.button :submit %></div>
   </div>
 <% end %>
